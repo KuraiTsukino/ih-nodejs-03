@@ -1,7 +1,8 @@
 // 1. Importaciones
 const express = require ("express")
-
 const app = express ()
+// se realiza una importación con la variable hbs
+const hbs = require("hbs")
 // la forma de hacer funcionar dotenv en el proyecto
 require("dotenv").config()
 
@@ -11,6 +12,8 @@ app.use(express.static('public'))
 // Activar handlebars
 app.set ("views", __dirname + "/views")
 app.set("view engine", "hbs")
+// se hace la activación de los partials dentro del proyecto.
+hbs.registerPartials(__dirname + "/views/partials")
 
 // 3. Rutas.
 
