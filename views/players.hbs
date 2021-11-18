@@ -1,3 +1,10 @@
 <p>Esta es la sección de Players</p>
 
-{{> playerCard}}
+<ul>
+    {{!-- for || .map --}}
+    {{!-- El #each itera un arreglo sobre cada elemento --}}
+{{#each data }}
+    {{!-- El this es el elemento atual en el que se enuentra la iteración --}}
+    {{> playerCard this}}
+{{/each}}
+</ul>
